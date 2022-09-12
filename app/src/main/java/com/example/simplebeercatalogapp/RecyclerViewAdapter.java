@@ -44,14 +44,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         String alcoholStr = list.get(position).getAlcohol();
-//        String s = String.valueOf(position);
         holder.beerName.setText(list.get(position).getName());
         holder.alcohol.setText(alcoholStr);
         holder.Brand.setText(list.get(position).getBrand());
         holder.itemNum.setText(String.valueOf(position+1));
 
         String num = alcoholStr.replaceAll("[^0-9]", "");
-//        int AlcoholInt = (Integer.parseInt(num))/10;
         float AlcoholInt = Float.parseFloat(num.replaceAll("[^\\d.]", ""));
         AlcoholInt /= 10;
         Log.d("mytagg", "onBindViewHolder: " + AlcoholInt);
